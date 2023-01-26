@@ -3,7 +3,7 @@ import {formatDistanceToNow} from 'date-fns'
 
 const CommentItem = props => {
   const {commentItem, deleteComment, hitLike} = props
-  const {username, comment, isLiked, id, randomBg} = commentItem
+  const {username, comment, isLiked, id, date, randomBg} = commentItem
 
   const onDelete = () => deleteComment(id)
 
@@ -22,11 +22,11 @@ const CommentItem = props => {
   return (
     <li className="comments-item">
       <div className="dp-text-container">
-        <span className={`dp ${randomBg}`}>{username[0]}</span>
+        <span className={`dp ${randomBg}`}>{username[0].toUpperCase()}</span>
         <div className="text-container">
           <p className="user-name">
             {username}
-            <span className="time-ago">{formatDistanceToNow(new Date())}</span>
+            <span className="time-ago">{formatDistanceToNow(date)}</span>
           </p>
           <p className="user-comment">{comment}</p>
         </div>

@@ -38,6 +38,7 @@ class Comments extends Component {
       username: nameInput,
       comment: commentInput,
       isLiked: false,
+      date: new Date(),
       randomBg: initialContainerBackgroundClassNames[randomIndex()],
     }
 
